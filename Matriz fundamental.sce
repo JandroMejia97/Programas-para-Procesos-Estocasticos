@@ -11,7 +11,7 @@ for i=1:orden
     for j=1:orden
         printf("\nIngrese el valor de la posición (%d,%d)",i,j);
         Q(i,j)=input("\nValor =");
-        end
+    end
 end
 disp(Q);
 //Encontrando M
@@ -51,16 +51,16 @@ if x==1 then
     Mcuad=M^2;
     printf("\nLos cuadrados de M son: ")
     disp(Mcuad);
-    //Calculo de la desviación estándar de M
-    a=2*Mdiag-I;
-    a=M*a
-    Desv=a-Mcuad;
-    printf("\nLa desviación estándar de M es: ")
+    //Calculo de la varianza V(Nij) de M
+    Desv=M*(2*Mdiag-I)-Mcuad;
+    printf("\nLa varianza V(Nij) de M es: ")
     disp(Desv);
-    //Calculo de la varianza de M
+    //Calculo de la varianza V(Ni) de M
     Mrhocuad=Mrho^2;
+    printf("\nLos cuadrados de Mrho son: ");
+    disp(Mrhocuad);
     Mvar=(2*M-I)*Mrho-Mrhocuad;
-    printf("\nLa varianza de M es: ")
+    printf("\nLa varianza V(Ni) de M es: ")
     disp(Mvar);
 end
 printf("\n¿Desea calular la Matriz F?\nDigite 1. Si o 2. No");
@@ -82,3 +82,4 @@ if x==1 then
     printf("\nLa Matriz F es: ")
     disp(F);
 end
+printf("Gracias por usar el programa, Exitos en MEP XD");
