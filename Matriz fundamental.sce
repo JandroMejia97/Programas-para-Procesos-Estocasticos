@@ -11,7 +11,7 @@ for i=1:orden
     for j=1:orden
         printf("\nIngrese el valor de la posición (%d,%d)",i,j);
         Q(i,j)=input("\nValor =");
-    end
+        end
 end
 disp(Q);
 //Encontrando M
@@ -48,7 +48,13 @@ if x==1 then
     printf("\nLa matriz Diagonal de M es: ")
     disp(Mdiag);
     //Calculo de los cuadrados de M
-    Mcuad=M^2;
+    Mcuad=zeros(orden,orden);
+    for i=1:orden
+        for j=1:orden
+            Mcuad(i,j)=M(i,j)^2;
+        end
+    end
+    
     printf("\nLos cuadrados de M son: ")
     disp(Mcuad);
     //Calculo de la varianza V(Nij) de M
